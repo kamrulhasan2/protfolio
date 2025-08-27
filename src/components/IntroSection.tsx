@@ -1,13 +1,16 @@
 import Image from "next/image";
 import ProfilePic from "../../public/images/kamrul.jpg";
 import Intro from "./helper-ui/Intro";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import { Github, Linkedin, Facebook , ContactRound } from "lucide-react";
+import Link from "next/link";
 
 export default function IntroSection() {
   return (
-    <div className="w-full flex flex-col-reverse lg:flex-row gap-14 justify-between items-center relative">
+    <div className="w-full flex flex-col-reverse lg:flex-row gap-14 justify-between items-center relative z-50">
         <div className="flex flex-col gap-6 w-full">
            <Intro />
-           
+
             <p className="text-base w-fit md:w-10/12 text-gray-800 dark:text-gray-300">
             I believe in technology's power to connect us and solve real-world problems. 
             As a Software Engineering student, I channel this belief into my passion: 
@@ -24,6 +27,22 @@ export default function IntroSection() {
                  MySQL, I am equipped to handle the complete development lifecycle, 
                  from concept to deployment.
             </p>
+
+            <div className="flex gap-4">
+          <InteractiveHoverButton icon={ContactRound}>Contact Me</InteractiveHoverButton>
+          <InteractiveHoverButton>Download CV</InteractiveHoverButton>
+        </div>
+        <div className="flex gap-4">
+          <Link href={"https://github.com/kamrulhasan2"} target="_blank">
+            <Github />
+          </Link>
+          <Link href={"https://www.linkedin.com/in/kamrul-hasan-a2935017a/"} target="_blank">
+            <Linkedin />
+          </Link>
+          <Link href={"https://www.facebook.com/kamrulhasan3778/"} target="_blank">
+            <Facebook/>
+          </Link>
+        </div>
 
         </div>
        
