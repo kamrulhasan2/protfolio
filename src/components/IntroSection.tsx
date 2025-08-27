@@ -6,7 +6,7 @@ export default function IntroSection() {
   return (
     <div className="max-w-9/12 mx-auto mt-10 flex flex-col-reverse lg:flex-row gap-14 justify-between items-center -z-10">
         <div className="flex flex-col gap-2 w-full lg:w-4/5">
-            <Intro /><br />
+          
             <p className="text-base w-fit md:w-10/12 text-gray-800 dark:text-gray-300">
             I believe in technology's power to connect us and solve real-world problems. 
             As a Software Engineering student, I channel this belief into my passion: 
@@ -25,15 +25,7 @@ export default function IntroSection() {
             </p>
 
         </div>
-        <div className="flex items-center justify-center md:mb-2">
-            <Image
-            src={ProfilePic}
-            alt="Kamrul Hasan"
-            width={250}
-            height={250}
-            className="ring-amber-400 ring-4 rounded-full object-cover"
-            />
-        </div>
+       
     </div>
   );
 }
