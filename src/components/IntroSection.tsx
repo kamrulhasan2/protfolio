@@ -4,9 +4,10 @@ import Intro from "./helper-ui/Intro";
 
 export default function IntroSection() {
   return (
-    <div className="max-w-9/12 mx-auto mt-10 flex flex-col-reverse lg:flex-row gap-14 justify-between items-center -z-10">
-        <div className="flex flex-col gap-2 w-full lg:w-4/5">
-          
+    <div className="w-full flex flex-col-reverse lg:flex-row gap-14 justify-between items-center relative">
+        <div className="flex flex-col gap-6 w-full">
+           <Intro />
+           
             <p className="text-base w-fit md:w-10/12 text-gray-800 dark:text-gray-300">
             I believe in technology's power to connect us and solve real-world problems. 
             As a Software Engineering student, I channel this belief into my passion: 

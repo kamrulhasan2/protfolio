@@ -20,31 +20,47 @@ function Intro() {
   }, [typingAnimationDelay]);
 
   return (
-    <div className="mb-16 md:mb-1">
-      <div className="absolute flex gap-2 flex-col md:flex-row">
-        <div className="flex flex-row justify-between">
-            <h1>Hello! I&apos;m </h1>
+        <div className="flex flex-col md:flex-row justify-between">
+
+          <div className="flex items-center justify-center md:hidden">
+            <Image
+              src={ProfilePic}
+              alt="Yatharth"
+              width={160}
+              height={160}
+              className="border-2 border-gray-100 rounded-full object-cover shadow-xl"
+            />
+          </div>
+
+          <div className="text-2xl h-[150px] mt-10 md:mt-0 leading-none">
+            <h1 className="text-2xl leading-none">Hello! I&apos;m</h1>
             <TypingAnimation>{typingAnimationText}</TypingAnimation>
-            {isTypingAnimationComplete && (
+              {isTypingAnimationComplete && (
               <WordRotate
                 className=""
-                words={["Software Engineer", "Full Stack Web Developer", "Programmer", "MERN Stack Developer", "Problem Solver"]}
+                words={[
+                  "Software Engineer",
+                  "Full Stack Web Developer",
+                  "Programmer",
+                  "MERN Stack Developer",
+                  "Problem Solver",
+                ]}
                 duration={2500}
               />
             )}
+          </div>
 
-            <div className="flex items-center justify-center md:mb-2">
-                <Image
-                src={ProfilePic}
-                alt="Kamrul Hasan"
-                width={250}
-                height={250}
-                className="ring-amber-400 ring-4 rounded-full object-cover"
-                />
-            </div>
+          <div className="hidden md:block">
+            <Image
+              src={ProfilePic}
+              alt="Yatharth"
+              width={160}
+              height={160}
+              className="border-2 border-gray-100 rounded-full object-cover shadow-xl"
+            />
+          </div>
+
         </div>
-      </div>
-    </div>
   );
 }
 
