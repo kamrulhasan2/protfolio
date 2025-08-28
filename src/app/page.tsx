@@ -1,4 +1,5 @@
 
+import Education from "@/components/Education";
 import IntroSection from "@/components/IntroSection";
 import WorkExperience from "@/components/WorkExperience";
 import dynamic from "next/dynamic";
@@ -14,7 +15,7 @@ export default function Home() {
       <div  className="fixed inset-0 pointer-events-none light-mode-fade-bottom dark:fade-bottom z-10 bg-white/10 dark:bg-black/10"  />
       <IntroSection />
       <WorkExperience />
-
+      <Education />
       <Meteors number={30} />
     </main>
   );
