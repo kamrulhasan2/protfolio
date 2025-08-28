@@ -1,4 +1,4 @@
-
+import ContactMe from "@/components/ContactMe";
 import Education from "@/components/Education";
 import IntroSection from "@/components/IntroSection";
 import Projects from "@/components/Projects";
@@ -20,6 +20,7 @@ export default function Home() {
       <WorkExperience />
       <Education />
       <Projects />
+      <ContactMe />
       <Meteors number={30} />
     </main>
   );
