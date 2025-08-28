@@ -9,10 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@radix-ui/react-hover-card": "^1.1.15",
     "clsx": "^2.1.1",
     "lucide-react": "^0.542.0",
     "motion": "^12.23.12",
     "next": "15.5.0",
+    "qss": "^3.0.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "tailwind-merge": "^3.3.1"

@@ -1,7 +1,8 @@
-import Link from "next/link";
 import React from "react";
 import { ViewIcon , LinkIcon } from "lucide-react";
 import {InteractiveHoverButton} from "./magicui/interactive-hover-button";
+import { LinkPreview } from "./ui/link-preview";
+// import notFoundUrl from "../../public/images/404_page.jpg"
 
 const projectsData = [
   {
@@ -108,12 +109,12 @@ function Projects() {
                 ))}
               </div>
               <div className="flex gap-2 mt-auto">
-                <Link href={project.link}>
-                  <InteractiveHoverButton icon={ViewIcon} >View</InteractiveHoverButton>
-                </Link>
-                <Link href={project.code}>
-                  <InteractiveHoverButton icon={LinkIcon} >Code</InteractiveHoverButton>
-                </Link>
+                <LinkPreview url={project.link } >
+                    <InteractiveHoverButton icon={ViewIcon} >View</InteractiveHoverButton>
+                </LinkPreview>
+                <LinkPreview url={project.code} >
+                    <InteractiveHoverButton icon={LinkIcon} >Code</InteractiveHoverButton>
+                </LinkPreview>
               </div>
             </div>
           </div>
