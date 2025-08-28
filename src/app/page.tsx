@@ -1,6 +1,7 @@
 
 import Education from "@/components/Education";
 import IntroSection from "@/components/IntroSection";
+import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import WorkExperience from "@/components/WorkExperience";
 import dynamic from "next/dynamic";
@@ -18,7 +19,7 @@ export default function Home() {
       <Skills />
       <WorkExperience />
       <Education />
-      
+      <Projects />
       <Meteors number={30} />
     </main>
   );
