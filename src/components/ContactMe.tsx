@@ -21,7 +21,15 @@ function ContactMe() {
           href="mailto:kamrulhasan20656@gmail.com"
           className="text-blue-500"
         >
-          kamrulhasan20656@gmail.com
+          kamrulhasan20656@gmail.com{" "}
+        </Link>
+        or direct message and call me on WhatsApp at{" "}
+        <Link
+          href="https://wa.me/+8801601780015"
+          target="_blank"
+          className="text-blue-500"
+        >
+          +8801601780015
         </Link>
       </p>
     </div>
