@@ -2,14 +2,14 @@ import React from "react";
 import { ViewIcon , LinkIcon } from "lucide-react";
 import {InteractiveHoverButton} from "./magicui/interactive-hover-button";
 import { LinkPreview } from "./ui/link-preview";
-// import notFoundUrl from "../../public/images/404_page.jpg"
+
 
 const projectsData = [
   {
     title: "Music Academy",
     description:
       "Music Academy, a modern, interactive web application built with Next.js and TypeScript. This platform is designed for a music school, offering a seamless experience for students to browse courses, learn about instructors, and sign up for webinars.",
-    link: "#",
+    link: "https://music-academy-next-js-ykl9.vercel.app/",
     code: "https://github.com/kamrulhasan2/music-academy-next.js",
     previewVideo: "#",
     technologies: [
