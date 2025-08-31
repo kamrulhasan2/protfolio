@@ -1,6 +1,7 @@
 import ContactMe from "@/components/ContactMe";
 import { CustomDock } from "@/components/CustomDock";
 import Education from "@/components/Education";
+import ScrollToTopButton from "@/components/helper-ui/ScrollToTopButton";
 import IntroSection from "@/components/IntroSection";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
@@ -26,6 +27,7 @@ export default function Home() {
       <Projects />
       <ContactMe />
       <Meteors number={30} />
+      <ScrollToTopButton />
     </main>
   );
 }
