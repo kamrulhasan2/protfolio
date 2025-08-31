@@ -42,7 +42,11 @@ export default function IntroSection() {
           >
             Contact Me
           </InteractiveHoverButton>
-          <InteractiveHoverButton>Download CV</InteractiveHoverButton>
+          <a href="/cv/Resume of Kamrul Hasan.pdf" target="_blank" download>
+            <InteractiveHoverButton>
+              Download CV
+            </InteractiveHoverButton>
+          </a>
         </div>
         <div className="flex gap-4">
           <Link href={"https://github.com/kamrulhasan2"} target="_blank">
