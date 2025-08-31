@@ -2,7 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { CalendarIcon, HomeIcon, MailIcon, } from "lucide-react";
+import {
+  CalendarIcon,
+  HomeIcon,
+  MailIcon,
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -74,7 +78,8 @@ const Icons = {
 
 const DATA = {
   navbar: [
-    { href: "#", icon: HomeIcon, label: "Home" },
+    { href: "#home", icon: HomeIcon, label: "Home" },
+    { href: "#contact", icon: MailIcon, label: "Contact" },
   ],
   contact: {
     social: {
@@ -120,6 +125,20 @@ export function CustomDock() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <div
       className={
@@ -133,12 +152,14 @@ export function CustomDock() {
           direction="middle"
           orientation={isMobile ? "horizontal" : "vertical"}
         >
+          {/* add a smooth scrolling effect at Navbar */}
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
                     href={item.href}
+                    onClick={(e) => handleLinkClick(e, item.href)}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12 rounded-full"
@@ -179,3 +200,4 @@ export function CustomDock() {
     </div>
   );
 }
+

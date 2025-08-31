@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function IntroSection() {
   return (
-    <div className="w-full flex flex-col-reverse lg:flex-row gap-14 justify-between items-center relative z-50">
+    <div id="home" className="w-full flex flex-col-reverse lg:flex-row gap-14 justify-between items-center relative z-50">
         <div className="flex flex-col gap-6 w-full">
            <Intro />
 

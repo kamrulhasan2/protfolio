@@ -4,7 +4,7 @@ import ContactForm from "./helper-ui/ContactForm";
 
 function ContactMe() {
   return (
-    <div className="flex flex-col gap-4 mb-20 md:mb-10">
+    <div id="contact" className="flex flex-col gap-4 mb-20 md:mb-10">
       <h1 className="text-2xl font-bold">Contact Me</h1>
       <ContactForm />
       <p className="text-sm text-gray-500 dark:text-gray-300">
