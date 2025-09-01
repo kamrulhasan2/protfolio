@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { PropsWithChildren, useRef } from "react";
@@ -45,13 +46,16 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     const mouseY = useMotionValue(Infinity);
 
     const renderChildren = () => {
-      return React.Children.map(children, (child: any) => {
-        return React.cloneElement(child, {
-          mouseX: mouseX,
-          mouseY: mouseY,
-          magnification: magnification,
-          distance: distance,
-        });
+      return React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            mouseX: mouseX,
+            mouseY: mouseY,
+            magnification: magnification,
+            distance: distance,
+          } as any);
+        }
+        return child;
       });
     };
 
@@ -93,8 +97,8 @@ export interface DockIconProps {
   size?: number;
   magnification?: number;
   distance?: number;
-  mouseX?: any;
-  mouseY?: any;
+  mouseX?: MotionValue<number>;
+  mouseY?: MotionValue<number>;
   className?: string;
   children?: React.ReactNode;
   props?: PropsWithChildren;
@@ -112,13 +116,19 @@ const DockIcon = ({
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  const distanceHeightCalc = useTransform(mouseY, (val: number) => {
+  const localMouseX = useMotionValue(Infinity);
+  const localMouseY = useMotionValue(Infinity);
+
+  const effectiveMouseX = mouseX ?? localMouseX;
+  const effectiveMouseY = mouseY ?? localMouseY;
+
+  const distanceHeightCalc = useTransform(effectiveMouseY, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { y: 0, height: 0 };
 
     return val - bounds.y - bounds.height / 2;
   });
 
-  const distanceWidthCalc = useTransform(mouseX, (val: number) => {
+  const distanceWidthCalc = useTransform(effectiveMouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
 
     return val - bounds.x - bounds.width / 2;

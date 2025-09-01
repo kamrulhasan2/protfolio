@@ -18,8 +18,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "@/components/magicui/dock";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -112,7 +110,6 @@ const DATA = {
 };
 
 export function CustomDock() {
-  const { resolvedTheme, setTheme } = useTheme();
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {

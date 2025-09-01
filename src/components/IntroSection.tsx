@@ -20,7 +20,7 @@ export default function IntroSection() {
         <Intro />
 
         <p className="text-base w-fit md:w-10/12 text-gray-800 dark:text-gray-300">
-          I believe in technology's power to connect us and solve real-world
+          I believe in technology&apos;s power to connect us and solve real-world
           problems. As a Software Engineering student, I channel this belief
           into my passion: building dynamic, user-centric web applications that
           provide intuitive and meaningful digital experiences.
