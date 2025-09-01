@@ -35,10 +35,11 @@ export default function IntroSection() {
           the complete development lifecycle, from concept to deployment.
         </p>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <InteractiveHoverButton
             icon={ContactRound}
             onClick={handleContactClick}
+            className="w-[10rem] md:w-fit"
           >
             Contact Me
           </InteractiveHoverButton>
