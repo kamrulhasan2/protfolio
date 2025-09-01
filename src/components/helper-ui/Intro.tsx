@@ -20,7 +20,7 @@ function Intro() {
   }, [typingAnimationDelay]);
 
   return (
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col md:flex-row justify-between md:mb-1">
 
           <div className="flex items-center justify-center md:hidden">
             <Image
@@ -32,9 +32,9 @@ function Intro() {
             />
           </div>
 
-          <div className="text-2xl h-[150px] mt-10 md:mt-0 leading-none">
-            <h1 className="text-2xl leading-none">Hello! I&apos;m</h1>
-            <TypingAnimation>{typingAnimationText}</TypingAnimation>
+          <div className="text-xl md:text-2xl h-[150px] mt-10 md:mt-0 leading-none">
+            <h1 className="text-xl md:text-2xl leading-none">Hello! I&apos;m</h1>
+            <TypingAnimation className="text-xl md:text-2xl leading-[4rem]">{typingAnimationText}</TypingAnimation>
               {isTypingAnimationComplete && (
               <WordRotate
                 className=""
