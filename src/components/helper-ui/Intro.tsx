@@ -25,7 +25,7 @@ function Intro() {
           <div className="flex items-center justify-center md:hidden">
             <Image
               src={ProfilePic}
-              alt="Yatharth"
+              alt="Md. Kamrul Hasan"
               width={160}
               height={160}
               className="border-2 border-gray-100 rounded-full object-cover shadow-xl"
@@ -39,9 +39,9 @@ function Intro() {
               <WordRotate
                 className=""
                 words={[
-                  "Software Engineer",
-                  "Full Stack Web Developer",
-                  "Programmer",
+                  "WordPress Plugin Developer",
+                  "Full-Stack Engineer",
+                  "AI Backend Developer",
                   "MERN Stack Developer",
                   "Problem Solver",
                 ]}
@@ -53,7 +53,7 @@ function Intro() {
           <div className="hidden md:block">
             <Image
               src={ProfilePic}
-              alt="Yatharth"
+              alt="Md. Kamrul Hasan"
               width={160}
               height={160}
               className="border-2 border-gray-100 rounded-full object-cover shadow-xl"

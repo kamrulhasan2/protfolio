@@ -87,7 +87,7 @@ const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/kamrul-hasan-a2935017a/",
+        url: "https://www.linkedin.com/in/kamrulhasan20656/",
         icon: Icons.linkedin,
       },
       Twitter: {

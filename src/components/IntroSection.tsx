@@ -54,7 +54,7 @@ export default function IntroSection() {
             <Github />
           </Link>
           <Link
-            href={"https://www.linkedin.com/in/kamrul-hasan-a2935017a/"}
+            href={"https://www.linkedin.com/in/kamrulhasan20656/"}
             target="_blank"
           >
             <Linkedin />
