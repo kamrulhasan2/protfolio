@@ -16,6 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kamrulhasan.dev"),
   title: "Md. Kamrul Hasan — WordPress Plugin Developer & Full-Stack Engineer",
   description:
     "Full-stack engineer who ships production WordPress platforms and custom plugins for healthcare and travel businesses in Bangladesh. Expertise in MERN stack, AI backend (LangChain, OpenAI), WooCommerce, and modern web technologies.",
