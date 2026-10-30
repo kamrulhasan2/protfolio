@@ -1,126 +1,151 @@
+"use client";
+
 import React from "react";
-import { ViewIcon , LinkIcon } from "lucide-react";
-import {InteractiveHoverButton} from "./magicui/interactive-hover-button";
+import { projectsData } from "@/data/portfolio-data";
+import { motion } from "motion/react";
+import {
+  ExternalLink,
+  Github,
+  Layers,
+  Star,
+  CheckCircle2,
+} from "lucide-react";
 import { LinkPreview } from "./ui/link-preview";
+import { InteractiveHoverButton } from "./magicui/interactive-hover-button";
 
-
-const projectsData = [
-  {
-    title: "Music Academy",
-    description:
-      "Music Academy, a modern, interactive web application built with Next.js and TypeScript. This platform is designed for a music school, offering a seamless experience for students to browse courses, learn about instructors, and sign up for webinars.",
-    link: "https://music-academy-next-js-ykl9.vercel.app/",
-    code: "https://github.com/kamrulhasan2/music-academy-next.js",
-    previewVideo: "#",
-    technologies: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Shadcn/ui",
-      "Aceternity UI ",
-      "Tabler Icons",
-      "Framer Motion",
-    ],
-  },
-  {
-    title: "FocusTube",
-    description:
-      "FocusTube is a distraction-free YouTube course viewer designed to help users watch educational playlists without interruptions. It allows users to save, manage, and track their learning progress efficiently.",
-    link: "https://focustube2.netlify.app/",
-    code: "https://github.com/kamrulhasan2/FocusTube",
-    previewVideo: "#",
-    technologies: [
-      "React",
-      "React-Router",
-      "MUI",
-      "Tailwind CSS",
-      "Redux",
-      "easy-peasy",
-      "React Hook Form",
-      "Yup Validation",
-      "localStorage",
-      "YouTube API V3"
-    ],
-  },
-  {
-    title: "Track Zone",
-    description:
-      "The Track Zone Project is a web-based application built using React that allows users to create and manage multiple clocks with different timezones. The project aims to test and enhance React skills by implementing core functionalities without using external state management libraries or a backend.",
-    link: "https://track2one.netlify.app/",
-    code: "https://github.com/kamrulhasan2/TrackZone_app",
-    previewVideo: "#",
-    technologies: [
-      "React",
-      "Custom Hooks",
-      "useForm",
-      "useClock",
-      "useClocks",
-      "useEvents",
-      "localStorage",
-      "date-fns",
-      "styled-components",
-    ],
-  },
-  {
-    title: "Result MS",
-    description:
-      "The Result Processing System is a web-based application designed to help academic institutions manage student performance data. It stores and processes assignment, class test, midterm, and final examination marks for students, categorized by session, department, and semester. The system calculates GPA and CGPA for students and enables them to view their individual results for specific semesters.",
-    link: "#",
-    code: "https://github.com/kamrulhasan2/ResultMS",
-    previewVideo: "#",
-    technologies: [
-      "React",
-      "React-Router",
-      "MUI",
-      "Tailwind CSS",
-      "Redux",
-      "easy-peasy",
-      "React Hook Form",
-      "Yup Validation",
-      "localStorage",
-    ],
-  },
-];
-
-function Projects() {
+export function Projects() {
   return (
-    <div className="flex flex-col gap-4 w-full">
-      <h1 className="text-2xl font-bold">Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {projectsData.map((project, index) => (
-          <div
-            key={index}
-            className="flex flex-col border rounded-md dark:border-gray-700"
-          >
-            <div className="flex flex-col gap-3 p-4 grow">
-              <h2 className="text-xl font-bold">{project.title}</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-[4px]">
-                {project.technologies.map((technology, index) => (
-                  <span
-                    key={index}
-                    className="bg-slate-100 text-gray-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
-              <div className="flex gap-2 mt-auto">
-                <LinkPreview url={project.link } >
-                    <InteractiveHoverButton icon={ViewIcon} >View</InteractiveHoverButton>
-                </LinkPreview>
-                <LinkPreview url={project.code} >
-                    <InteractiveHoverButton icon={LinkIcon} >Code</InteractiveHoverButton>
-                </LinkPreview>
-              </div>
-            </div>
-          </div>
-        ))}
+    <section id="projects" className="w-full flex flex-col gap-6 pt-4 scroll-mt-20">
+      <div className="flex flex-col gap-2">
+        <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
+          <Layers className="size-3.5" />
+          Featured Work
+        </div>
+        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+          Production Systems &amp; Projects
+        </h2>
+        <p className="text-sm md:text-base text-muted-foreground">
+          Real-world platforms, custom WordPress plugins, and full-stack AI architectures built end-to-end.
+        </p>
       </div>
-    </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {projectsData.map((project, index) => {
+          const isFeatured = project.featured;
+
+          return (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className={`group flex flex-col justify-between p-6 rounded-2xl bg-surface/70 border backdrop-blur-md shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 ${
+                isFeatured
+                  ? "border-primary/40 bg-gradient-to-br from-surface via-surface to-accent/25 ring-1 ring-primary/20 md:col-span-2"
+                  : "border-border/80 hover:border-primary/40"
+              }`}
+            >
+              <div className="flex flex-col gap-3.5">
+                {/* Header & Badges */}
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      {isFeatured && (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+                          <Star className="size-3 fill-amber-500 text-amber-500" />
+                          Featured
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm font-medium text-primary mt-0.5">
+                      {project.subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bullet highlights */}
+                <ul className="space-y-2 text-sm text-foreground/80 my-1">
+                  {project.description.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <CheckCircle2 className="size-3.5 text-secondary shrink-0 mt-1" />
+                      <span className="leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Tech chips */}
+                <div className="flex flex-wrap gap-1.5 pt-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs font-mono font-medium px-2.5 py-1 rounded-md bg-surface-hover border border-border/60 text-muted-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-2.5 pt-5 mt-4 border-t border-border/60">
+                {/* Live / Demo Button */}
+                {(project.liveUrl || project.liveDemoUrl) && (
+                  <LinkPreview
+                    url={(project.liveUrl || project.liveDemoUrl)!}
+                    className="font-medium"
+                  >
+                    <InteractiveHoverButton
+                      icon={ExternalLink}
+                      className="text-xs h-9 px-4"
+                    >
+                      {project.liveUrl ? "Live Website" : "Live Demo"}
+                    </InteractiveHoverButton>
+                  </LinkPreview>
+                )}
+
+                {/* Code / GitHub Button */}
+                {project.githubUrl && (
+                  <LinkPreview url={project.githubUrl} className="font-medium">
+                    <InteractiveHoverButton
+                      icon={Github}
+                      className="text-xs h-9 px-4"
+                    >
+                      View Code
+                    </InteractiveHoverButton>
+                  </LinkPreview>
+                )}
+
+                {/* Frontend / Backend split buttons if available */}
+                {project.frontendUrl && !project.githubUrl && (
+                  <LinkPreview url={project.frontendUrl} className="font-medium">
+                    <InteractiveHoverButton
+                      icon={Github}
+                      className="text-xs h-9 px-4"
+                    >
+                      Frontend
+                    </InteractiveHoverButton>
+                  </LinkPreview>
+                )}
+                {project.backendUrl && !project.githubUrl && (
+                  <LinkPreview url={project.backendUrl} className="font-medium">
+                    <InteractiveHoverButton
+                      icon={Github}
+                      className="text-xs h-9 px-4"
+                    >
+                      Backend
+                    </InteractiveHoverButton>
+                  </LinkPreview>
+                )}
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 

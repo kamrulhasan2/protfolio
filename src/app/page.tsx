@@ -15,7 +15,7 @@ const Meteors = dynamic(() => import("@/components/magicui/meteros"), {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col md:gap-14 gap-10 md:py-20 md:px-16 px-6 relative overflow-hidden max-w-4xl mx-auto w-full">
+    <main className="flex min-h-screen flex-col md:gap-16 gap-12 md:py-20 md:px-16 px-6 relative overflow-hidden max-w-4xl mx-auto w-full">
       <div className="fixed inset-0 pointer-events-none light-mode-fade-bottom dark:fade-bottom z-10 bg-white/5 dark:bg-black/10" />
 
       <CustomDock />
@@ -24,8 +24,8 @@ export default function Home() {
       <StatsBar />
       <Skills />
       <WorkExperience />
-      <Education />
       <Projects />
+      <Education />
       <ContactMe />
 
       <Meteors number={25} />
