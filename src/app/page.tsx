@@ -7,29 +7,25 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import StatsBar from "@/components/StatsBar";
 import WorkExperience from "@/components/WorkExperience";
-import dynamic from "next/dynamic";
-
-const Meteors = dynamic(() => import("@/components/magicui/meteros"), {
-  ssr: true,
-});
+import AmbientBackground from "@/components/AmbientBackground";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col md:gap-16 gap-12 md:py-20 md:px-16 px-6 relative overflow-hidden max-w-4xl mx-auto w-full">
-      <div className="fixed inset-0 pointer-events-none light-mode-fade-bottom dark:fade-bottom z-10 bg-white/5 dark:bg-black/10" />
-
+    <>
+      <AmbientBackground />
       <CustomDock />
 
-      <IntroSection />
-      <StatsBar />
-      <Skills />
-      <WorkExperience />
-      <Projects />
-      <Education />
-      <ContactMe />
+      <main className="flex min-h-screen flex-col md:gap-16 gap-12 md:py-20 md:px-16 px-6 relative max-w-4xl mx-auto w-full">
+        <IntroSection />
+        <StatsBar />
+        <Skills />
+        <WorkExperience />
+        <Projects />
+        <Education />
+        <ContactMe />
 
-      <Meteors number={25} />
-      <ScrollToTopButton />
-    </main>
+        <ScrollToTopButton />
+      </main>
+    </>
   );
 }
