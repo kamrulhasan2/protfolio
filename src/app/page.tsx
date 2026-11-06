@@ -1,4 +1,5 @@
 import ContactMe from "@/components/ContactMe";
+import Footer from "@/components/Footer";
 import { CustomDock } from "@/components/CustomDock";
 import Education from "@/components/Education";
 import ScrollToTopButton from "@/components/helper-ui/ScrollToTopButton";
@@ -23,6 +24,7 @@ export default function Home() {
         <Projects />
         <Education />
         <ContactMe />
+        <Footer />
 
         <ScrollToTopButton />
       </main>

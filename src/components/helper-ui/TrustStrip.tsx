@@ -22,7 +22,7 @@ const clientIcons: Record<string, React.ComponentType<{ className?: string }>> =
 
 export function TrustStrip() {
   return (
-    <div className="w-full pt-10 pb-4 border-t border-border/40 mt-6 select-none">
+    <div className="w-full py-4 select-none">
       <div className="flex items-center justify-center gap-4 mb-6">
         <div className="h-px bg-gradient-to-r from-transparent via-border to-border flex-1 max-w-[120px]" />
         <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground/80">

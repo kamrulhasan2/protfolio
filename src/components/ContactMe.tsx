@@ -18,7 +18,7 @@ import Link from "next/link";
 
 export function ContactMe() {
   return (
-    <section id="contact" className="w-full flex flex-col gap-6 pt-4 mb-24 md:mb-16 scroll-mt-20">
+    <section id="contact" className="w-full flex flex-col gap-6 pt-4 mb-6 md:mb-8 scroll-mt-20">
       <div className="flex flex-col gap-2">
         <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
           <MessageSquare className="size-3.5" />
@@ -147,12 +147,6 @@ export function ContactMe() {
           </div>
           <ContactForm />
         </motion.div>
-      </div>
-
-      {/* Footer copyright note */}
-      <div className="pt-8 mt-4 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground gap-2">
-        <p>© {new Date().getFullYear()} Md. Kamrul Hasan. All rights reserved.</p>
-        <p className="font-mono">Built with Next.js 15, TypeScript &amp; Tailwind CSS</p>
       </div>
     </section>
   );
