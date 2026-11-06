@@ -8,7 +8,7 @@ import {
   Mail,
   Github,
   Linkedin,
-  Globe,
+  Facebook,
   Plus,
 } from "lucide-react";
 import Link from "next/link";
@@ -203,13 +203,13 @@ export function Intro() {
             </Link>
 
             <Link
-              href={socialLinks.websites[0]?.url || "https://meditaj.com"}
+              href={socialLinks.facebook.url}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Live Project Website"
-              className="size-9 rounded-full flex items-center justify-center bg-white dark:bg-[#0a1628]/85 hover:bg-slate-100 dark:hover:bg-[#122544] border border-slate-200 dark:border-white/10 hover:border-cyan-500 text-slate-700 dark:text-muted-foreground hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-200 hover:scale-110 shadow-xs"
+              aria-label="Facebook Profile"
+              className="size-9 rounded-full flex items-center justify-center bg-white dark:bg-[#0a1628]/85 hover:bg-slate-100 dark:hover:bg-[#122544] border border-slate-200 dark:border-white/10 hover:border-blue-600 text-slate-700 dark:text-muted-foreground hover:text-blue-600 dark:hover:text-blue-500 transition-all duration-200 hover:scale-110 shadow-xs"
             >
-              <Globe className="size-3.5" />
+              <Facebook className="size-3.5" />
             </Link>
           </div>
         </motion.div>
