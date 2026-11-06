@@ -15,7 +15,7 @@ export default function Home() {
       <AmbientBackground />
       <CustomDock />
 
-      <main className="flex min-h-screen flex-col md:gap-16 gap-12 md:py-20 md:px-16 px-6 relative max-w-4xl mx-auto w-full">
+      <main className="flex min-h-screen flex-col md:gap-14 gap-10 pt-6 md:pt-8 pb-20 md:px-12 px-5 relative max-w-5xl xl:max-w-6xl mx-auto w-full">
         <IntroSection />
         <StatsBar />
         <Skills />

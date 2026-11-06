@@ -1,0 +1,16 @@
+{
+  "name": "Md. Kamrul Hasan — Portfolio",
+  "short_name": "Kamrul Hasan",
+  "description": "WordPress Plugin Developer & Full-Stack Engineer (MERN, AI Backend)",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

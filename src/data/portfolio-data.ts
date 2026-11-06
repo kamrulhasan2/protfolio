@@ -1,11 +1,14 @@
 // ============================================================
-// Centralized Portfolio Data — Based on CV of Md. Kamrul Hasan
+// Centralized Portfolio Data — Updated from Latest CV & LinkedIn
 // ============================================================
 
 // --- Personal Info ---
 export const personalInfo = {
   name: "Md. Kamrul Hasan",
-  title: "WordPress Plugin Developer | Full-Stack Engineer (MERN, AI Backend)",
+  firstName: "Md.",
+  middleName: "Kamrul",
+  lastName: "Hasan",
+  title: "WordPress Plugin Developer · Full-Stack Engineer (MERN, AI Backend)",
   location: "Mirpur, Dhaka, Bangladesh",
   phone: "+880 1601 780015",
   email: "kamrulhasan20656@gmail.com",
@@ -13,13 +16,15 @@ export const personalInfo = {
   resumePath: "/cv/Resume of Kamrul Hasan.pdf",
   availableForWork: true,
   summary:
-    "Full-stack engineer who ships production WordPress platforms and custom plugins for healthcare and travel businesses in Bangladesh, backed by a MERN and AI-backend foundation. Built a telemedicine booking system with video consultations and SSLCommerz payments, and a travel-booking plugin suite on WooCommerce. Owns features end to end: data model, REST API, admin UI, security hardening, and live deployment.",
+    "Versatile Full-stack engineer who ships production WordPress platforms and custom plugins for healthcare, pharmacy, travel, e-commerce and restaurant businesses, backed by a MERN and AI-backend foundation. Built a telemedicine system with video consultations, a home-healthcare and lab-test booking plugin, and a travel-booking plugin suite on WooCommerce. Owns features end to end: data model, REST API, admin UI, payments, security hardening, and live deployment.",
+  heroSummary:
+    "Full-stack engineer who ships production WordPress platforms and custom plugins for healthcare and travel businesses in Bangladesh, backed by a MERN and AI-backend foundation. Built a telemedicine booking system with video consultations and SSLCommerce payments, and a travel-booking plugin suite on WooCommerce.",
   roles: [
+    "Full-stack Engineer & Problem Solver",
     "WordPress Plugin Developer",
-    "Full-Stack Engineer",
+    "Full-Stack Engineer (MERN)",
     "AI Backend Developer",
-    "MERN Stack Developer",
-    "Problem Solver",
+    "Production Systems Builder",
   ],
 };
 
@@ -35,11 +40,7 @@ export const socialLinks = {
   },
   facebook: {
     name: "Facebook",
-    url: "https://www.facebook.com/kamrulhasan3778/",
-  },
-  twitter: {
-    name: "X (Twitter)",
-    url: "https://x.com/kamrulkh3778",
+    url: "https://www.facebook.com/kamrulhasan3778",
   },
   whatsapp: {
     name: "WhatsApp",
@@ -55,15 +56,32 @@ export const socialLinks = {
   ],
 };
 
+// --- Client / Business Trust Logos ---
+export const trustedClients = [
+  { name: "Meditaj", icon: "heart-pulse", url: "https://meditaj.com" },
+  { name: "E-GUIDER", icon: "code", url: "https://e-guider.com" },
+  { name: "SKS TOURS", icon: "plane", url: "#" },
+  { name: "TravelZ", icon: "navigation", url: "https://travelz.com.bd" },
+  { name: "FocusTube", icon: "play", url: "https://focustube2.netlify.app" },
+];
+
+// --- Quick Tech Stack Highlights for Hero ---
+export const heroTechPills = [
+  { name: "React", icon: "react" },
+  { name: "Node.js", icon: "node" },
+  { name: "WordPress", icon: "wordpress" },
+  { name: "+ More", icon: "more", href: "#skills" },
+];
+
 // --- Stats ---
 export const stats = [
   { label: "Projects Built", value: 6, suffix: "+" },
-  { label: "Live Websites", value: 3, suffix: "+" },
+  { label: "Live Websites", value: 4, suffix: "+" },
   { label: "Custom WP Plugins", value: 5, suffix: "+" },
-  { label: "Tech Stack", value: 10, suffix: "+" },
+  { label: "Tech Stack", value: 12, suffix: "+" },
 ];
 
-// --- Technical Skills (Categorized) ---
+// --- Technical Skills (Categorized from Updated CV) ---
 export interface Skill {
   name: string;
   icon?: string;
@@ -80,15 +98,15 @@ export const skillsData: SkillCategory[] = [
     category: "WordPress",
     emoji: "🔌",
     skills: [
-      { name: "Custom Plugin Dev" },
-      { name: "WooCommerce" },
-      { name: "Elementor" },
-      { name: "CPT & Taxonomies" },
+      { name: "Custom plugins" },
+      { name: "WooCommerce (HPOS)" },
+      { name: "Elementor Pro" },
+      { name: "CPTs & taxonomies" },
       { name: "REST API" },
       { name: "WP-CLI" },
       { name: "WP-Cron" },
       { name: "LiteSpeed Cache" },
-      { name: "Rank Math SEO" },
+      { name: "Rank Math" },
     ],
   },
   {
@@ -123,7 +141,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    category: "AI & Integrations",
+    category: "AI & Payments",
     emoji: "🤖",
     skills: [
       { name: "LangChain" },
@@ -133,23 +151,25 @@ export const skillsData: SkillCategory[] = [
       { name: "Agora RTC" },
       { name: "SSLCommerz" },
       { name: "Stripe" },
+      { name: "Clover" },
       { name: "AWS S3" },
       { name: "Backblaze B2" },
     ],
   },
   {
-    category: "Tools & Testing",
+    category: "DevOps & Tools",
     emoji: "🔧",
     skills: [
       { name: "Git" },
-      { name: "GitHub Actions" },
-      { name: "Swagger (OpenAPI)" },
+      { name: "GitHub Actions & Releases" },
+      { name: "Hostinger" },
+      { name: "Cloudflare" },
+      { name: "Vercel" },
+      { name: "XAMPP" },
+      { name: "Swagger" },
       { name: "Vitest" },
       { name: "Supertest" },
       { name: "Postman" },
-      { name: "XAMPP" },
-      { name: "Hostinger" },
-      { name: "Vercel" },
     ],
   },
 ];
@@ -173,25 +193,27 @@ export const workExperienceData: WorkExperienceItem[] = [
     companyUrl: "https://e-guider.com",
     jobTitle: "Web Developer, WordPress & Plugin Development",
     description: [
-      "Design, build, and maintain client websites on WordPress, Elementor, and WooCommerce, including Meditaj (healthcare), TravelZ (travel), and Axia (e-commerce).",
-      "Develop custom PHP plugins with custom database tables, REST routes, role-based portals, and admin dashboards, replacing page-builder layouts with faster, SEO-friendly native code.",
-      "Integrate SSLCommerz, bank transfer, and cash on delivery through WooCommerce; set up WP-Cron email reminders and SMTP delivery.",
-      "Audit live sites for broken features and slow pages and fix them; plan features in phases with project manager approval and local testing before release.",
-      "Cleaned a hacked site of spam and malicious code, hardened it, and migrated it to a new domain while keeping its content and URL structure.",
+      "Build and maintain client sites on WordPress, Elementor and WooCommerce: Meditaj, Meditaj Pharmacy, TravelZ, Axia and The Indian Tavern.",
+      "Develop custom PHP plugins with custom database tables, REST routes, role-based portals and admin dashboards, replacing page-builder layouts with faster, SEO-friendly native code.",
+      "Integrate payments through WooCommerce (SSLCommerz Hosted Checkout, bank transfer, cash on delivery) and set up a Clover gateway; configure SMTP and WP-Cron email notifications.",
+      "Cleaned a hacked travel site of spam and malicious code, hardened it, and migrated it to travelz.com.bd with URLs intact.",
+      "Audit live sites for broken features and slow pages, restore product catalogs, and configure domain redirects (Namecheap, Cloudflare); plan work in phases with PM approval and local testing before release.",
     ],
     techTags: [
       "WordPress",
       "PHP",
-      "WooCommerce",
-      "Elementor",
+      "WooCommerce (HPOS)",
+      "Elementor Pro",
       "REST API",
       "SSLCommerz",
+      "Clover",
       "MySQL",
+      "Cloudflare",
     ],
   },
 ];
 
-// --- Projects ---
+// --- Projects (Exact from Updated CV) ---
 export interface ProjectItem {
   title: string;
   subtitle: string;
@@ -210,8 +232,8 @@ export const projectsData: ProjectItem[] = [
     title: "Meditaj / EG Care",
     subtitle: "Telemedicine Platform",
     description: [
-      "Built patient booking with specialty, availability, and fee filters, instant doctor requests, saved family members, and public doctor profile pages.",
-      "Implemented WebRTC video consultations, reviews, and 30-minute email reminders; created patient, doctor, and admin portals on seven custom tables with a metrics dashboard.",
+      "Patient booking with specialty, availability and fee filters, instant MBBS doctor queue, family members and public doctor profiles; WebRTC video consultations, reviews and 30-minute email reminders.",
+      "Patient, doctor and admin portals on seven custom tables with a metrics dashboard; building a prescription workflow where doctors write structured prescriptions and admins review and send them to patients in one click.",
     ],
     technologies: [
       "PHP",
@@ -226,14 +248,60 @@ export const projectsData: ProjectItem[] = [
     featured: true,
   },
   {
+    title: "E-Care Health Services",
+    subtitle: "Home Healthcare & Lab Test Plugin",
+    description: [
+      "Caregiver booking, lab test orders and ambulance requests sharing one WooCommerce checkout and patient account with EG Care.",
+      "Re-architected the lab module: division → district → area location master, per-provider test catalog, lab cart with configurable advance payment and coupons, and a live data migration.",
+    ],
+    technologies: [
+      "PHP",
+      "WordPress",
+      "WooCommerce",
+      "MySQL",
+      "Custom DB Tables",
+    ],
+    liveUrl: "https://meditaj.com",
+    githubUrl: "https://github.com/kamrulhasan2/Meditaj",
+  },
+  {
+    title: "TravelZ Holidays",
+    subtitle: "Travel Booking Plugin",
+    description: [
+      "Converted a React design into a native WordPress plugin: package post types, destination taxonomies, clean URLs, WooCommerce booking and PDF itineraries, shipped via GitHub releases with a built-in updater.",
+    ],
+    technologies: [
+      "PHP",
+      "WordPress",
+      "WooCommerce",
+      "GitHub Actions & Releases",
+    ],
+    liveUrl: "https://travelz.com.bd",
+    githubUrl: "https://github.com/kamrulhasan2/travelz-holidays",
+  },
+  {
+    title: "TravelZ Maldives & Visa Assistance",
+    subtitle: "Booking Wizard & Visa Plugin Suite",
+    description: [
+      "Maldives booking wizard with offline, bank transfer and SSLCommerz payments via WooCommerce orders.",
+      "Admin-managed visa plugin with fee tables, document checklists, PDF viewer, country search and Schema.org markup.",
+    ],
+    technologies: [
+      "PHP",
+      "WordPress",
+      "WooCommerce",
+      "SSLCommerz",
+      "Schema.org",
+    ],
+    githubUrl: "https://github.com/kamrulhasan2/TravelZ--Maldives",
+    liveDemoUrl: "https://github.com/kamrulhasan2/travel-z-visa",
+  },
+  {
     title: "FocusTube",
     subtitle: "Full-Stack AI Learning Platform",
     description: [
-      "Architected and built a full-stack platform that turns passive YouTube watching into active learning through AI summaries, RAG-based chat, and automated workflows.",
-      "Full-stack: component-driven Next.js frontend integrated with a scalable Node.js REST API.",
-      "AI & automation: LangChain and OpenAI pipelines for transcript extraction and structured summary generation.",
-      "Infrastructure & security: Backblaze B2 (S3) storage, Stripe payments, JWT authentication, and Zod validation.",
-      "QA & docs: Vitest and Supertest test suite; Swagger API documentation.",
+      "Turns passive YouTube watching into active learning with LangChain/OpenAI transcript summaries and RAG chat.",
+      "Next.js frontend on a Node.js REST API with JWT auth, Stripe payments, B2 storage, Vitest/Supertest tests and Swagger docs.",
     ],
     technologies: [
       "Next.js",
@@ -253,36 +321,8 @@ export const projectsData: ProjectItem[] = [
     featured: true,
   },
   {
-    title: "TravelZ Holidays",
-    subtitle: "Travel Booking Plugin",
-    description: [
-      "Converted a React design into a native WordPress plugin with package post types, destination taxonomies, clean URLs, WooCommerce booking, and PDF itineraries; set up GitHub releases with a built-in updater.",
-    ],
-    technologies: ["PHP", "WordPress", "WooCommerce", "GitHub Actions"],
-    liveUrl: "https://travelz.com.bd",
-    githubUrl: "https://github.com/kamrulhasan2/travelz-holidays",
-  },
-  {
-    title: "TravelZ Maldives Packages",
-    subtitle: "Booking Wizard",
-    description: [
-      "Co-built a Maldives booking wizard with offline, bank transfer, and SSLCommerz payments via WooCommerce orders.",
-    ],
-    technologies: ["PHP", "WordPress", "WooCommerce", "SSLCommerz"],
-    githubUrl: "https://github.com/kamrulhasan2/TravelZ--Maldives",
-  },
-  {
-    title: "TravelZ Visa Assistance",
-    subtitle: "Visa Plugin",
-    description: [
-      "Co-built an admin-managed visa plugin: fee tables, document checklists, PDF viewer, country search, Schema.org markup.",
-    ],
-    technologies: ["PHP", "WordPress", "Schema.org"],
-    githubUrl: "https://github.com/kamrulhasan2/travel-z-visa",
-  },
-  {
     title: "Music Academy",
-    subtitle: "Frontend",
+    subtitle: "Modern Educational Frontend",
     description: [
       "Built a responsive, SEO-friendly marketing site with course pages, instructor profiles, and animated components.",
     ],
@@ -303,11 +343,11 @@ export interface EducationItem {
 
 export const educationData: EducationItem[] = [
   {
-    degree: "B.Sc. in Computer Science & Engineering",
+    degree: "B.Sc. in Computer Science and Engineering",
     institution: "Dhaka City College",
     affiliatedWith: "National University",
     startYear: "2021",
-    endYear: "Present",
+    endYear: "2025",
   },
 ];
 
