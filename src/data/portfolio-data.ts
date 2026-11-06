@@ -62,7 +62,7 @@ export const trustedClients = [
   { name: "E-GUIDER", icon: "code", url: "https://e-guider.com" },
   { name: "SKS TOURS", icon: "plane", url: "#" },
   { name: "TravelZ", icon: "navigation", url: "https://travelz.com.bd" },
-  { name: "FocusTube", icon: "play", url: "https://focustube2.netlify.app" },
+  { name: "FocusTube", icon: "play", url: "https://focus-tube-frontend.vercel.app/" },
 ];
 
 // --- Quick Tech Stack Highlights for Hero ---
@@ -315,9 +315,9 @@ export const projectsData: ProjectItem[] = [
       "Stripe",
       "Zod",
     ],
-    frontendUrl: "https://github.com/kamrulhasan2/FocusTube",
-    backendUrl: "https://github.com/kamrulhasan2/FocusTube",
-    liveDemoUrl: "https://focustube2.netlify.app/",
+    frontendUrl: "https://github.com/kamrulhasan2/FocusTube-Frontend",
+    backendUrl: "https://github.com/kamrulhasan2/FocusTube-Backend",
+    liveDemoUrl: "https://focus-tube-frontend.vercel.app/",
     featured: true,
   },
   {
