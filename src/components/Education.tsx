@@ -18,10 +18,10 @@ export function Education() {
           <GraduationCap className="size-3.5" />
           Academic Background
         </div>
-        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-foreground">
           Education &amp; Languages
         </h2>
-        <p className="text-sm md:text-base text-muted-foreground">
+        <p className="text-sm md:text-base text-slate-600 dark:text-muted-foreground">
           Formal computer science foundations, engineering principles, and multilingual communication.
         </p>
       </div>
@@ -35,19 +35,19 @@ export function Education() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="md:col-span-2 flex flex-col justify-between p-6 rounded-2xl bg-surface/70 border border-border/80 backdrop-blur-md shadow-card hover:shadow-card-hover transition-all duration-300"
+            className="md:col-span-2 flex flex-col justify-between p-6 rounded-2xl bg-white/95 dark:bg-surface/70 border border-slate-200 dark:border-border/80 backdrop-blur-md shadow-sm hover:shadow-md dark:shadow-card dark:hover:shadow-card-hover transition-all duration-300"
           >
             <div className="flex flex-col gap-3">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border/50 pb-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-border/50 pb-3">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                  <div className="p-2.5 rounded-xl bg-blue-50 dark:bg-primary/10 text-blue-600 dark:text-primary">
                     <BookOpen className="size-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-xl font-bold text-foreground">
+                    <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-foreground">
                       {item.degree}
                     </h3>
-                    <p className="text-sm font-medium text-muted-foreground">
+                    <p className="text-sm font-medium text-slate-600 dark:text-muted-foreground">
                       {item.institution}
                       {item.affiliatedWith && (
                         <span> ({item.affiliatedWith})</span>
@@ -56,7 +56,7 @@ export function Education() {
                   </div>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-accent text-accent-foreground w-fit">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-50 dark:bg-accent text-blue-700 dark:text-accent-foreground border border-blue-100 dark:border-transparent w-fit">
                   <Calendar className="size-3" />
                   <span>
                     {item.startYear} — {item.endYear}
@@ -64,7 +64,7 @@ export function Education() {
                 </div>
               </div>
 
-              <p className="text-sm text-foreground/80 leading-relaxed pt-1">
+              <p className="text-sm text-slate-700 dark:text-foreground/80 leading-relaxed pt-1">
                 Rigorous coursework covering Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Computer Networks, and Software Engineering methodologies.
               </p>
             </div>
@@ -77,14 +77,14 @@ export function Education() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="flex flex-col justify-between p-6 rounded-2xl bg-surface/70 border border-border/80 backdrop-blur-md shadow-card hover:shadow-card-hover transition-all duration-300"
+          className="flex flex-col justify-between p-6 rounded-2xl bg-white/95 dark:bg-surface/70 border border-slate-200 dark:border-border/80 backdrop-blur-md shadow-sm hover:shadow-md dark:shadow-card dark:hover:shadow-card-hover transition-all duration-300"
         >
           <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-2.5 pb-2 border-b border-border/50">
-              <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500">
+            <div className="flex items-center gap-2.5 pb-2 border-b border-slate-100 dark:border-border/50">
+              <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-500">
                 <Languages className="size-4" />
               </div>
-              <h3 className="font-bold text-base text-foreground">
+              <h3 className="font-bold text-base text-slate-900 dark:text-foreground">
                 Languages
               </h3>
             </div>
@@ -93,12 +93,12 @@ export function Education() {
               {languagesData.map((lang) => (
                 <div
                   key={lang.name}
-                  className="flex items-center justify-between p-2.5 rounded-xl bg-surface-hover/70 border border-border/40"
+                  className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-surface-hover/70 border border-slate-200 dark:border-border/40"
                 >
-                  <span className="text-sm font-semibold text-foreground">
+                  <span className="text-sm font-semibold text-slate-800 dark:text-foreground">
                     {lang.name}
                   </span>
-                  <span className="text-xs font-mono px-2 py-0.5 rounded-md bg-accent text-accent-foreground">
+                  <span className="text-xs font-mono px-2 py-0.5 rounded-md bg-blue-50 dark:bg-accent text-blue-700 dark:text-accent-foreground border border-blue-100 dark:border-transparent">
                     {lang.level}
                   </span>
                 </div>

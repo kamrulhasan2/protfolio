@@ -24,10 +24,10 @@ export function ContactMe() {
           <MessageSquare className="size-3.5" />
           Get In Touch
         </div>
-        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-foreground">
           Let&apos;s Build Something Great
         </h2>
-        <p className="text-sm md:text-base text-muted-foreground">
+        <p className="text-sm md:text-base text-slate-600 dark:text-muted-foreground">
           Whether you need a custom WordPress plugin, full-stack web application, or AI-integrated system, I&apos;m ready to help.
         </p>
       </div>
@@ -44,16 +44,16 @@ export function ContactMe() {
           {/* Email card */}
           <a
             href={`mailto:${personalInfo.email}`}
-            className="group flex items-start gap-3.5 p-4 rounded-2xl bg-surface/70 border border-border/80 backdrop-blur-md shadow-card hover:shadow-card-hover hover:border-primary/50 transition-all duration-300"
+            className="group flex items-start gap-3.5 p-4 rounded-2xl bg-white/95 dark:bg-surface/70 border border-slate-200 dark:border-border/80 backdrop-blur-md shadow-sm hover:shadow-md dark:shadow-card dark:hover:shadow-card-hover hover:border-primary/50 transition-all duration-300"
           >
-            <div className="p-2.5 rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform">
+            <div className="p-2.5 rounded-xl bg-blue-50 dark:bg-primary/10 text-blue-600 dark:text-primary group-hover:scale-110 transition-transform">
               <Mail className="size-5" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
                 Email
               </span>
-              <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors break-all">
+              <span className="text-sm font-semibold text-slate-900 dark:text-foreground group-hover:text-primary transition-colors break-all">
                 {personalInfo.email}
               </span>
             </div>
@@ -64,39 +64,39 @@ export function ContactMe() {
             href={socialLinks.whatsapp.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-start gap-3.5 p-4 rounded-2xl bg-surface/70 border border-border/80 backdrop-blur-md shadow-card hover:shadow-card-hover hover:border-emerald-500/50 transition-all duration-300"
+            className="group flex items-start gap-3.5 p-4 rounded-2xl bg-white/95 dark:bg-surface/70 border border-slate-200 dark:border-border/80 backdrop-blur-md shadow-sm hover:shadow-md dark:shadow-card dark:hover:shadow-card-hover hover:border-emerald-500/50 transition-all duration-300"
           >
-            <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
+            <div className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-500 group-hover:scale-110 transition-transform">
               <Phone className="size-5" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
                 WhatsApp / Call
               </span>
-              <span className="text-sm font-semibold text-foreground group-hover:text-emerald-500 transition-colors">
+              <span className="text-sm font-semibold text-slate-900 dark:text-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-500 transition-colors">
                 {personalInfo.phone}
               </span>
             </div>
           </a>
 
           {/* Location card */}
-          <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-surface/70 border border-border/80 backdrop-blur-md shadow-card">
-            <div className="p-2.5 rounded-xl bg-accent text-accent-foreground">
+          <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/95 dark:bg-surface/70 border border-slate-200 dark:border-border/80 backdrop-blur-md shadow-sm dark:shadow-card">
+            <div className="p-2.5 rounded-xl bg-blue-50 dark:bg-accent text-blue-600 dark:text-accent-foreground">
               <MapPin className="size-5" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
                 Location
               </span>
-              <span className="text-sm font-semibold text-foreground">
+              <span className="text-sm font-semibold text-slate-900 dark:text-foreground">
                 {personalInfo.location}
               </span>
             </div>
           </div>
 
           {/* Social Profiles Card */}
-          <div className="p-4 rounded-2xl bg-surface/70 border border-border/80 backdrop-blur-md shadow-card flex flex-col gap-2.5">
-            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <div className="p-4 rounded-2xl bg-white/95 dark:bg-surface/70 border border-slate-200 dark:border-border/80 backdrop-blur-md shadow-sm dark:shadow-card flex flex-col gap-2.5">
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
               Social Profiles
             </span>
             <div className="flex items-center gap-2 pt-1">
@@ -104,7 +104,7 @@ export function ContactMe() {
                 href={socialLinks.github.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-surface border border-border/80 hover:bg-accent hover:text-foreground hover:scale-110 transition-all duration-200"
+                className="p-2.5 rounded-xl bg-slate-100 dark:bg-surface border border-slate-200 dark:border-border/80 text-slate-700 dark:text-foreground hover:bg-slate-200 dark:hover:bg-accent hover:scale-110 transition-all duration-200"
                 aria-label="GitHub"
               >
                 <Github className="size-4" />
@@ -113,7 +113,7 @@ export function ContactMe() {
                 href={socialLinks.linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-surface border border-border/80 hover:bg-accent hover:text-blue-500 hover:scale-110 transition-all duration-200"
+                className="p-2.5 rounded-xl bg-slate-100 dark:bg-surface border border-slate-200 dark:border-border/80 text-slate-700 dark:text-foreground hover:bg-slate-200 dark:hover:bg-accent hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all duration-200"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="size-4" />
@@ -122,7 +122,7 @@ export function ContactMe() {
                 href={socialLinks.facebook.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-surface border border-border/80 hover:bg-accent hover:text-blue-600 hover:scale-110 transition-all duration-200"
+                className="p-2.5 rounded-xl bg-slate-100 dark:bg-surface border border-slate-200 dark:border-border/80 text-slate-700 dark:text-foreground hover:bg-slate-200 dark:hover:bg-accent hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all duration-200"
                 aria-label="Facebook"
               >
                 <Facebook className="size-4" />
@@ -137,11 +137,11 @@ export function ContactMe() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="lg:col-span-3 p-6 rounded-2xl bg-surface/70 border border-border/80 backdrop-blur-md shadow-card"
+          className="lg:col-span-3 p-6 rounded-2xl bg-white/95 dark:bg-surface/70 border border-slate-200 dark:border-border/80 backdrop-blur-md shadow-sm dark:shadow-card"
         >
-          <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border/50">
+          <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-100 dark:border-border/50">
             <Sparkles className="size-4 text-primary" />
-            <h3 className="font-bold text-base text-foreground">
+            <h3 className="font-bold text-base text-slate-900 dark:text-foreground">
               Send a Direct Message
             </h3>
           </div>

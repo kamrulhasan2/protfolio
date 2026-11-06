@@ -34,15 +34,15 @@ function StatCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative flex flex-col items-center justify-center p-4 md:p-6 rounded-2xl bg-surface/70 border border-border/80 backdrop-blur-md shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+      className="group relative flex flex-col items-center justify-center p-4 md:p-6 rounded-2xl bg-white/95 dark:bg-surface/70 border border-slate-200 dark:border-border/80 backdrop-blur-md shadow-sm hover:shadow-md dark:shadow-card dark:hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
     >
-      <div className="p-3 rounded-xl bg-accent text-accent-foreground mb-3 group-hover:scale-110 transition-transform duration-300">
+      <div className="p-3 rounded-xl bg-blue-50 dark:bg-accent text-blue-600 dark:text-accent-foreground mb-3 group-hover:scale-110 transition-transform duration-300">
         <Icon className="size-5 md:size-6" />
       </div>
-      <span className="text-2xl md:text-3xl font-bold tracking-tight text-foreground font-mono">
+      <span className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-foreground font-mono">
         {displayValue}
       </span>
-      <span className="text-xs md:text-sm text-muted-foreground mt-1 text-center font-medium">
+      <span className="text-xs md:text-sm text-slate-600 dark:text-muted-foreground mt-1 text-center font-medium">
         {item.label}
       </span>
     </motion.div>

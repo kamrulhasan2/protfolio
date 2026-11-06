@@ -1,37 +1,39 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ============================================================
    Design Tokens — Portfolio of Md. Kamrul Hasan
    ============================================================ */
 
 :root {
-  --background: #fafafa;
-  --foreground: #111827;
+  --background: #f8fafc;
+  --foreground: #0f172a;
   --surface: #ffffff;
-  --surface-hover: #f3f4f6;
+  --surface-hover: #f1f5f9;
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
   --primary-foreground: #ffffff;
-  --secondary: #10b981;
-  --secondary-hover: #059669;
+  --secondary: #059669;
+  --secondary-hover: #047857;
   --secondary-foreground: #ffffff;
-  --muted: #6b7280;
-  --muted-foreground: #9ca3af;
-  --border: #e5e7eb;
+  --muted: #475569;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
   --ring: #2563eb;
   --card: #ffffff;
-  --card-foreground: #111827;
-  --accent: #f0f9ff;
-  --accent-foreground: #2563eb;
-  --destructive: #ef4444;
+  --card-foreground: #0f172a;
+  --accent: #eff6ff;
+  --accent-foreground: #1d4ed8;
+  --destructive: #dc2626;
   --radius: 0.75rem;
 }
 
 .dark {
-  --background: #0a0a0f;
+  --background: #030712;
   --foreground: #f3f4f6;
-  --surface: #111118;
-  --surface-hover: #1a1a24;
+  --surface: #0a0f1d;
+  --surface-hover: #111a30;
   --primary: #3b82f6;
   --primary-hover: #60a5fa;
   --primary-foreground: #ffffff;
@@ -40,9 +42,9 @@
   --secondary-foreground: #111827;
   --muted: #9ca3af;
   --muted-foreground: #6b7280;
-  --border: #1f2937;
+  --border: #1f293d;
   --ring: #3b82f6;
-  --card: #111118;
+  --card: #0a0f1d;
   --card-foreground: #f3f4f6;
   --accent: #172554;
   --accent-foreground: #93c5fd;

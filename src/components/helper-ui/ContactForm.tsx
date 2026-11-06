@@ -84,7 +84,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full">
       {submitStatus === "success" && (
-        <div className="flex items-center gap-2 p-3.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-sm">
+        <div className="flex items-center gap-2 p-3.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-sm">
           <CheckCircle2 className="size-4 shrink-0" />
           <span>Thank you! Your message has been sent successfully. I will get back to you soon.</span>
         </div>
@@ -98,7 +98,7 @@ export function ContactForm() {
       )}
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+        <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
           Your Name
         </label>
         <Input
@@ -107,7 +107,7 @@ export function ContactForm() {
           type="text"
           {...register("name")}
           disabled={isSubmitting}
-          className="bg-surface/70 border-border/80 focus:border-primary"
+          className="border-slate-200 dark:border-border/80 bg-white dark:bg-zinc-800 focus:border-primary text-slate-900 dark:text-white"
         />
         {errors.name && (
           <p className="text-xs text-destructive mt-0.5">{errors.name.message}</p>
@@ -115,7 +115,7 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+        <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
           Email Address
         </label>
         <Input
@@ -124,7 +124,7 @@ export function ContactForm() {
           type="email"
           {...register("email")}
           disabled={isSubmitting}
-          className="bg-surface/70 border-border/80 focus:border-primary"
+          className="border-slate-200 dark:border-border/80 bg-white dark:bg-zinc-800 focus:border-primary text-slate-900 dark:text-white"
         />
         {errors.email && (
           <p className="text-xs text-destructive mt-0.5">{errors.email.message}</p>
@@ -132,7 +132,7 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+        <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
           Message
         </label>
         <textarea
@@ -142,7 +142,7 @@ export function ContactForm() {
           {...register("message")}
           disabled={isSubmitting}
           className={cn(
-            "w-full rounded-md border border-border/80 bg-surface/70 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50"
+            "w-full rounded-md border border-slate-200 dark:border-border/80 bg-white dark:bg-zinc-800 px-3 py-2 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-zinc-500 transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus:border-primary disabled:cursor-not-allowed disabled:opacity-50"
           )}
         />
         {errors.message && (
