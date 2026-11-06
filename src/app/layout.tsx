@@ -1,20 +1,71 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Kamrul Hasan",
-  description: "Hey! I'm Kamrul Hasan. I am a passionate Computer Science & Engineering (CSE) student at Dhaka City College with expertise in C, C++, JavaScript, React, and Node JS. I have experience in web development and have been teaching for three years. I love solving problems, learning new technologies, and building cool projects.",
+  metadataBase: new URL("https://kamrulhasan.dev"),
+  manifest: "/manifest.json",
+  title: "Md. Kamrul Hasan — WordPress Plugin Developer & Full-Stack Engineer",
+  description:
+    "Full-stack engineer who ships production WordPress platforms and custom plugins for healthcare and travel businesses in Bangladesh. Expertise in MERN stack, AI backend (LangChain, OpenAI), WooCommerce, and modern web technologies.",
+  keywords: [
+    "Kamrul Hasan",
+    "WordPress Plugin Developer",
+    "Full-Stack Engineer",
+    "MERN Stack",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PHP",
+    "WooCommerce",
+    "LangChain",
+    "AI Backend",
+    "Bangladesh",
+    "Software Engineer",
+  ],
+  authors: [{ name: "Md. Kamrul Hasan" }],
+  creator: "Md. Kamrul Hasan",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    title:
+      "Md. Kamrul Hasan — WordPress Plugin Developer & Full-Stack Engineer",
+    description:
+      "Full-stack engineer shipping production WordPress platforms and custom plugins for healthcare and travel businesses. MERN + AI backend expertise.",
+    siteName: "Kamrul Hasan Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Md. Kamrul Hasan — WordPress Plugin Developer & Full-Stack Engineer",
+    description:
+      "Full-stack engineer shipping production WordPress platforms and custom plugins. MERN + AI backend expertise.",
+    creator: "@kamrulkh3778",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -25,9 +76,45 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Md. Kamrul Hasan",
+              jobTitle: "WordPress Plugin Developer & Full-Stack Engineer",
+              url: "https://kamrulhasan.dev",
+              email: "kamrulhasan20656@gmail.com",
+              telephone: "+8801601780015",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Mirpur, Dhaka",
+                addressCountry: "BD",
+              },
+              sameAs: [
+                "https://github.com/kamrulhasan2",
+                "https://www.linkedin.com/in/kamrulhasan20656/",
+                "https://www.facebook.com/kamrulhasan3778/",
+                "https://x.com/kamrulkh3778",
+              ],
+              knowsAbout: [
+                "WordPress Plugin Development",
+                "Full-Stack Engineering",
+                "MERN Stack",
+                "AI Backend Development",
+                "WooCommerce",
+                "React",
+                "Next.js",
+                "Node.js",
+                "PHP",
+              ],
+            }),
+          }}
+        />
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

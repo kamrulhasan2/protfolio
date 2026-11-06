@@ -9,7 +9,7 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from "framer-motion";
+} from "motion/react";
 
 import { cn } from "@/lib/utils";
 
@@ -22,11 +22,11 @@ export interface DockProps extends VariantProps<typeof dockVariants> {
   orientation?: "horizontal" | "vertical";
 }
 
-const DEFAULT_MAGNIFICATION = 60;
-const DEFAULT_DISTANCE = 140;
+const DEFAULT_MAGNIFICATION = 56;
+const DEFAULT_DISTANCE = 120;
 
 const dockVariants = cva(
-  "mx-auto w-max mt-8 h-[58px] p-2 flex gap-2 rounded-2xl shadow-md border border-slate-200 supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md dark:border-slate-800 bg-white/10 dark:bg-black/10"
+  "mx-auto w-max p-2 flex gap-2 rounded-2xl shadow-xl border border-white/10 backdrop-blur-2xl bg-[#081225]/85"
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -47,13 +47,17 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
 
     const renderChildren = () => {
       return React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
-            mouseX: mouseX,
-            mouseY: mouseY,
-            magnification: magnification,
-            distance: distance,
-          } as any);
+        if (React.isValidElement(child) && typeof child.type !== "string") {
+          // Only pass mouse coordinates if it accepts them
+          const isDockIcon = (child.type as any)?.displayName === "DockIcon" || typeof child.type === "function";
+          if (isDockIcon) {
+            return React.cloneElement(child, {
+              mouseX: mouseX,
+              mouseY: mouseY,
+              magnification: magnification,
+              distance: distance,
+            } as any);
+          }
         }
         return child;
       });
@@ -63,14 +67,14 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       <motion.div
         ref={ref}
         onMouseMove={(e) => {
-          if (orientation == "horizontal") {
+          if (orientation === "horizontal") {
             mouseX.set(e.clientX);
           } else {
             mouseY.set(e.clientY);
           }
         }}
         onMouseLeave={() => {
-          if (orientation == "horizontal") {
+          if (orientation === "horizontal") {
             mouseX.set(Infinity);
           } else {
             mouseY.set(Infinity);
@@ -106,6 +110,7 @@ export interface DockIconProps {
 }
 
 const DockIcon = ({
+  size = 40,
   magnification = DEFAULT_MAGNIFICATION,
   distance = DEFAULT_DISTANCE,
   mouseX,
@@ -124,26 +129,24 @@ const DockIcon = ({
 
   const distanceHeightCalc = useTransform(effectiveMouseY, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { y: 0, height: 0 };
-
     return val - bounds.y - bounds.height / 2;
   });
 
   const distanceWidthCalc = useTransform(effectiveMouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-
     return val - bounds.x - bounds.width / 2;
   });
 
   const heightSync = useTransform(
     distanceHeightCalc,
     [-distance, 0, distance],
-    [40, magnification, 40]
+    [size, magnification, size]
   );
 
   const widthSync = useTransform(
     distanceWidthCalc,
     [-distance, 0, distance],
-    [40, magnification, 40]
+    [size, magnification, size]
   );
 
   const height = useSpring(heightSync, {

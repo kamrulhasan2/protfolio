@@ -1,85 +1,99 @@
-import React from 'react'
+"use client";
 
-interface WorkExperienceItem {
-  startDate: string;
-  endDate?: string;
-  companyName: string;
-  companyLogo?: string;
-  jobTitle: string;
-  description: string[];
-  companyLink?: string;
-}
+import React from "react";
+import { workExperienceData } from "@/data/portfolio-data";
+import { motion } from "motion/react";
+import { Briefcase, ExternalLink, Calendar, CheckCircle2 } from "lucide-react";
 
-
-const workExperienceData: WorkExperienceItem[] = [
-  {
-    startDate: "August 2024",
-    endDate: "Present",
-    companyName: "DCC_CSE_LAB",
-    jobTitle: "Junior Software Engineer",
-    description: [
-      "In my role as a Junior Software Engineer at DCC_CSE_LAB, I developed a dynamic front-end application under the supervision of Professor Monir Hossain. The application was designed to empower users by allowing them to convert any YouTube playlist into a structured, easy-to-follow online course. This project was a deep dive into the React ecosystem, where I was responsible for building the user experience from the ground up. I utilized React Router DOM to create a seamless, single-page application with intuitive navigation. To ensure a modern and responsive design, I implemented the Material-UI component library. A key aspect of the development process was building and managing reusable logic with React's custom hooks, which significantly strengthened my understanding of state management and advanced component patterns. This hands-on experience was crucial in solidifying my core skills in front-end development and building a complete, user-focused product.",
-    ],
-  },
-  
-];
-
-
-const WorkExperience: React.FC = () => {
+export function WorkExperience() {
   return (
-    <div className="flex flex-col gap-4 w-full -z-10">
-      <h1 className="text-2xl font-bold">Work Experience</h1>
+    <section id="experience" className="w-full flex flex-col gap-6 pt-4 scroll-mt-20">
+      <div className="flex flex-col gap-2">
+        <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
+          <Briefcase className="size-3.5" />
+          Career Journey
+        </div>
+        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-foreground">
+          Work Experience
+        </h2>
+        <p className="text-sm md:text-base text-slate-600 dark:text-muted-foreground">
+          Track record of shipping production-grade platforms, custom plugin suites, and secure payment integrations.
+        </p>
+      </div>
 
-      <ol className="relative border-s border-gray-200 dark:border-gray-700">
+      <div className="relative border-l-2 border-slate-200 dark:border-border/80 pl-6 md:pl-8 ml-3 md:ml-4 space-y-10">
         {workExperienceData.map((item, index) => (
-          <li
-            key={index}
-            className={`mb-10 ms-4 ${
-              index === workExperienceData.length - 1 ? "mb-0" : ""
-            }`}
+          <motion.div
+            key={item.companyName + index}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
+            className="relative group"
           >
-            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              {item.startDate} - {item.endDate || "Present"}
-            </time>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              {item.jobTitle} at {item.companyName}
-            </h3>
-            <div className="mb-4 text-base font-normal text-gray-700 dark:text-gray-400">
-              <ul>
-                {item.description.map((desc, index) => (
-                  <li key={index}>{desc}</li>
+            {/* Timeline node */}
+            <div className="absolute -left-[31px] md:-left-[39px] top-1.5 size-5 rounded-full border-4 border-slate-100 dark:border-background bg-primary shadow-sm group-hover:scale-125 group-hover:bg-secondary transition-transform duration-300" />
+
+            <div className="flex flex-col gap-4 p-5 md:p-6 rounded-2xl bg-white/95 dark:bg-surface/70 border border-slate-200 dark:border-border/80 backdrop-blur-md shadow-sm hover:shadow-md dark:shadow-card dark:hover:shadow-card-hover transition-all duration-300">
+              {/* Header */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-border/50 pb-4">
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-foreground">
+                    {item.jobTitle}
+                  </h3>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-primary mt-0.5">
+                    <span>{item.companyName}</span>
+                    {item.companyUrl && (
+                      <a
+                        href={item.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs text-slate-500 dark:text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <ExternalLink className="size-3" />
+                        <span>e-guider.com</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-50 dark:bg-accent text-blue-700 dark:text-accent-foreground border border-blue-100 dark:border-transparent w-fit">
+                  <Calendar className="size-3" />
+                  <span>
+                    {item.startDate} — {item.endDate}
+                  </span>
+                </div>
+              </div>
+
+              {/* Accomplishments */}
+              <ul className="space-y-2.5 text-sm md:text-base text-slate-700 dark:text-foreground/85">
+                {item.description.map((desc, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <CheckCircle2 className="size-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-1" />
+                    <span className="leading-relaxed">{desc}</span>
+                  </li>
                 ))}
               </ul>
+
+              {/* Tech Tags */}
+              {item.techTags && item.techTags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-border/50">
+                  {item.techTags.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs font-mono font-medium px-2.5 py-1 rounded-md bg-slate-100 dark:bg-surface-hover border border-slate-200 dark:border-border/60 text-slate-700 dark:text-muted-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
-            {item.companyLink && (
-              <a
-                href={item.companyLink}
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-              >
-                Learn more{" "}
-                <svg
-                  className="w-3 h-3 ms-2 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-              </a>
-            )}
-          </li>
+          </motion.div>
         ))}
-      </ol>
-    </div>
+      </div>
+    </section>
   );
-};
+}
 
 export default WorkExperience;
