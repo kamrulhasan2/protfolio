@@ -22,9 +22,9 @@ export const personalInfo = {
   roles: [
     "Full-stack Engineer & Problem Solver",
     "WordPress Plugin Developer",
-    "Full-Stack Engineer (MERN)",
+    "Full Stack Web Developer",
+    "MERN Stack Developer",
     "AI Backend Developer",
-    "Production Systems Builder",
   ],
 };
 

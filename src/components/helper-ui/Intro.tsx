@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import { personalInfo, socialLinks, heroTechPills } from "@/data/portfolio-data";
 import HeroVisual from "./HeroVisual";
+import { WordRotate } from "@/components/magicui/word-rotate";
 
 // Tech Icon SVGs for quick pills
 const TechIcon = ({ name }: { name: string }) => {
@@ -116,9 +117,13 @@ export function Intro() {
             <span className="text-blue-600 dark:text-indigo-400">.</span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-slate-800 dark:text-foreground/95">
-            Full-stack Engineer &amp; Problem Solver
-          </p>
+          <div className="min-h-[30px] sm:min-h-[34px] flex items-center">
+            <WordRotate
+              words={personalInfo.roles}
+              duration={2500}
+              className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-slate-800 dark:text-foreground/95"
+            />
+          </div>
         </motion.div>
 
         {/* Bio Paragraph */}

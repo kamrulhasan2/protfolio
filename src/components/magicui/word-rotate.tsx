@@ -10,41 +10,47 @@ interface WordRotateProps {
   duration?: number;
   motionProps?: MotionProps;
   className?: string;
+  containerClassName?: string;
 }
 
 export function WordRotate({
   words,
-  duration = 2500,
+  duration = 2400,
   motionProps = {
-    initial: { opacity: 0, y: -50 },
+    initial: { opacity: 0, y: 16 },
     animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 50 },
-    transition: { duration: 0.5, ease: "easeOut" },
+    exit: { opacity: 0, y: -16 },
+    transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] },
   },
   className,
+  containerClassName,
 }: WordRotateProps) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    if (!words || words.length === 0) return;
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
     }, duration);
 
-    // Clean up interval on unmount
     return () => clearInterval(interval);
   }, [words, duration]);
 
+  if (!words || words.length === 0) return null;
+
   return (
-    <div className="overflow-hidden">
+    <div className={cn("overflow-hidden py-0.5", containerClassName)}>
       <AnimatePresence mode="wait">
-        <motion.h1
+        <motion.span
           key={words[index]}
-          className={cn(className)}
+          className={cn("inline-block", className)}
           {...motionProps}
         >
           {words[index]}
-        </motion.h1>
+        </motion.span>
       </AnimatePresence>
     </div>
   );
 }
+
+export default WordRotate;
