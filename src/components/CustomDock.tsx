@@ -84,13 +84,18 @@ export function CustomDock() {
         <Dock
           direction="middle"
           orientation={isMobile ? "horizontal" : "vertical"}
-          className="border border-white/10 bg-[#081225]/85 backdrop-blur-2xl shadow-2xl p-2 gap-2 rounded-2xl"
+          className="border border-white/10 bg-[#081225]/90 backdrop-blur-2xl shadow-2xl p-1.5 sm:p-2 gap-1 sm:gap-2 rounded-2xl max-w-[calc(100vw-1rem)]"
         >
           {/* Navigation Section Anchors */}
           {navItems.map((item) => {
             const isActive = (activeSection || "home") === item.id;
             return (
-              <DockIcon key={item.label} orientation={isMobile ? "horizontal" : "vertical"}>
+              <DockIcon
+                key={item.label}
+                size={isMobile ? 36 : 40}
+                magnification={isMobile ? 42 : 56}
+                orientation={isMobile ? "horizontal" : "vertical"}
+              >
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Link
@@ -98,7 +103,7 @@ export function CustomDock() {
                       onClick={(e) => handleLinkClick(e, item.href)}
                       className={cn(
                         buttonVariants({ variant: "ghost", size: "icon" }),
-                        "size-10 rounded-full transition-all duration-300",
+                        "size-9 sm:size-10 rounded-full transition-all duration-300",
                         isActive
                           ? "bg-blue-600 text-white shadow-[0_0_18px_rgba(37,99,235,0.75)] scale-105"
                           : "hover:bg-white/10 text-muted-foreground hover:text-foreground"
@@ -118,11 +123,16 @@ export function CustomDock() {
 
           <Separator
             orientation={!isMobile ? "horizontal" : "vertical"}
-            className="my-1 opacity-40 bg-white/10"
+            className="my-1 opacity-40 bg-white/10 hidden sm:block"
           />
 
-          {/* Social Links */}
-          <DockIcon orientation={isMobile ? "horizontal" : "vertical"}>
+          {/* Social Links (shown on sm+ / tablet and desktop) */}
+          <DockIcon
+            className="hidden sm:flex"
+            size={isMobile ? 36 : 40}
+            magnification={isMobile ? 42 : 56}
+            orientation={isMobile ? "horizontal" : "vertical"}
+          >
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
@@ -131,7 +141,7 @@ export function CustomDock() {
                   rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-10 rounded-full hover:bg-white/10 text-muted-foreground hover:text-foreground"
+                    "size-9 sm:size-10 rounded-full hover:bg-white/10 text-muted-foreground hover:text-foreground"
                   )}
                   aria-label="GitHub Profile"
                 >
@@ -144,7 +154,12 @@ export function CustomDock() {
             </Tooltip>
           </DockIcon>
 
-          <DockIcon orientation={isMobile ? "horizontal" : "vertical"}>
+          <DockIcon
+            className="hidden sm:flex"
+            size={isMobile ? 36 : 40}
+            magnification={isMobile ? 42 : 56}
+            orientation={isMobile ? "horizontal" : "vertical"}
+          >
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
@@ -153,7 +168,7 @@ export function CustomDock() {
                   rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-10 rounded-full hover:bg-white/10 text-muted-foreground hover:text-blue-400"
+                    "size-9 sm:size-10 rounded-full hover:bg-white/10 text-muted-foreground hover:text-blue-400"
                   )}
                   aria-label="LinkedIn Profile"
                 >
@@ -166,7 +181,12 @@ export function CustomDock() {
             </Tooltip>
           </DockIcon>
 
-          <DockIcon orientation={isMobile ? "horizontal" : "vertical"}>
+          <DockIcon
+            className="hidden sm:flex"
+            size={isMobile ? 36 : 40}
+            magnification={isMobile ? 42 : 56}
+            orientation={isMobile ? "horizontal" : "vertical"}
+          >
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
@@ -175,7 +195,7 @@ export function CustomDock() {
                   rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-10 rounded-full hover:bg-white/10 text-muted-foreground hover:text-emerald-400"
+                    "size-9 sm:size-10 rounded-full hover:bg-white/10 text-muted-foreground hover:text-emerald-400"
                   )}
                   aria-label="WhatsApp"
                 >
@@ -194,7 +214,11 @@ export function CustomDock() {
           />
 
           {/* Theme Toggle */}
-          <DockIcon orientation={isMobile ? "horizontal" : "vertical"}>
+          <DockIcon
+            size={isMobile ? 36 : 40}
+            magnification={isMobile ? 42 : 56}
+            orientation={isMobile ? "horizontal" : "vertical"}
+          >
             <Tooltip>
               <TooltipTrigger asChild>
                 <div className="flex items-center justify-center">

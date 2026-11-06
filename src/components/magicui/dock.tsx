@@ -110,6 +110,7 @@ export interface DockIconProps {
 }
 
 const DockIcon = ({
+  size = 40,
   magnification = DEFAULT_MAGNIFICATION,
   distance = DEFAULT_DISTANCE,
   mouseX,
@@ -139,13 +140,13 @@ const DockIcon = ({
   const heightSync = useTransform(
     distanceHeightCalc,
     [-distance, 0, distance],
-    [40, magnification, 40]
+    [size, magnification, size]
   );
 
   const widthSync = useTransform(
     distanceWidthCalc,
     [-distance, 0, distance],
-    [40, magnification, 40]
+    [size, magnification, size]
   );
 
   const height = useSpring(heightSync, {
